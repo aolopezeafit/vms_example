@@ -3,7 +3,7 @@ var cors = require('cors');
 var app = express();
 const PORT = process.env.PORT||8080;
 const HOST = '127.0.0.1';
-const VERSION = "1.23.01.27.06"
+const VERSION = "1.23.02.10.06"
 
 app.use(express.json());
 app.use(cors());
@@ -43,8 +43,9 @@ app.post('/suggest', async function (req, res, next) {
 });
 
 app.listen(PORT, () => {
-    console.log(`Running on http://${HOST}:${PORT}`);
+    console.log('Running version ' + VERSION + ` on http://${HOST}:${PORT}`);
 });
+
 
 // app.listen(PORT, HOST, () => {
 //     console.log(`Running on http://${HOST}:${PORT}`);
