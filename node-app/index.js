@@ -1,7 +1,7 @@
 var express = require('express');
 var cors = require('cors');
 var app = express();
-const PORT = 9898;
+const PORT = process.env.PORT||8080;
 const HOST = '127.0.0.1';
 const VERSION = "1.23.01.27.06"
 
@@ -42,6 +42,10 @@ app.post('/suggest', async function (req, res, next) {
     }
 });
 
-app.listen(PORT, HOST, () => {
+app.listen(PORT, () => {
     console.log(`Running on http://${HOST}:${PORT}`);
 });
+
+// app.listen(PORT, HOST, () => {
+//     console.log(`Running on http://${HOST}:${PORT}`);
+// });
